@@ -14,7 +14,14 @@ import {
 class demorn extends Component {
   constructor(props){
     super(props);
-    this.state = {zip: ''};
+    this.state = {
+      zip: '',
+      forecast: {
+        main: 'Clouds',
+        description: 'few clouds',
+        temp: 45.7
+      }
+    };
   }
 
   _handleTextChange(event) {
