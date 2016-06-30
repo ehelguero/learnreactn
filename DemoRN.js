@@ -10,6 +10,7 @@ import {
  TextInput,
  View
 } from 'react-native';
+import Forecast from './Forecast';
 
 class demorn extends Component {
   constructor(props){
@@ -35,15 +36,16 @@ class demorn extends Component {
        <Text style={styles.welcome}>
          You input {this.state.zip}
        </Text>
+       <Forecast
+         main={this.state.forecast.main}
+         description={this.state.forecast.description}
+         temp={this.state.forecast.temp}
+       />
        <TextInput
          style={styles.input}
-         onSubmitEditing={this._handleTextChange.bind(this)} />
-       <Text style={styles.instructions}>
-         To get started, edit index.android.js
-       </Text>
-       <Text style={styles.instructions}>
-         Shake or press menu button for dev menu
-       </Text>
+         returnKeyType="go"
+         onSubmitEditing={this._handleTextChange.bind(this)}
+        />
      </View>
    );
  }
